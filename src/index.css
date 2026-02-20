@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+/* FL Studio 风格滚动条 */
+.piano-scroll::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+.piano-scroll::-webkit-scrollbar-track {
+  background: #1e1e20;
+}
+.piano-scroll::-webkit-scrollbar-thumb {
+  background: #4a4a50;
+  border: 2px solid #1e1e20;
+  border-radius: 7px;
+}
+.piano-scroll::-webkit-scrollbar-thumb:hover {
+  background: #5a5a62;
+}
+.piano-scroll::-webkit-scrollbar-corner {
+  background: #1e1e20;
+}
