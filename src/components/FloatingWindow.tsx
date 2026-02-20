@@ -127,26 +127,18 @@ export function FloatingWindow({ title, open, onClose, children, defaultWidth = 
           </div>
 
           {/* 内容区 */}
-          <AnimatePresence>
-            {!minimized && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 'auto', opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.12 }}
-                className="relative flex-1 overflow-hidden"
-              >
-                {children}
-                {!maximized && (
-                  <div className="absolute bottom-0 right-0 h-3 w-3 cursor-nwse-resize" onMouseDown={onResizeStart}>
-                    <svg viewBox="0 0 16 16" className="h-full w-full text-[#555]">
-                      <path d="M14 14L8 14L14 8Z" fill="currentColor" />
-                    </svg>
-                  </div>
-                )}
-              </motion.div>
-            )}
-          </AnimatePresence>
+          {!minimized && (
+            <div className="relative flex-1 overflow-hidden">
+              {children}
+              {!maximized && (
+                <div className="absolute bottom-0 right-0 h-3 w-3 cursor-nwse-resize" onMouseDown={onResizeStart}>
+                  <svg viewBox="0 0 16 16" className="h-full w-full text-[#555]">
+                    <path d="M14 14L8 14L14 8Z" fill="currentColor" />
+                  </svg>
+                </div>
+              )}
+            </div>
+          )}
         </motion.div>
       )}
     </AnimatePresence>

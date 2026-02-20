@@ -3,7 +3,6 @@ import type { Note } from '../types'
 export class PlaybackEngine {
   private timer: number | null = null
   private startTime = 0
-  private bpm = 120
   private notes: Note[] = []
   private playFn: (padId: number) => void
   private onBeat: (beat: number) => void
@@ -19,7 +18,6 @@ export class PlaybackEngine {
 
   start(bpm: number, notes: Note[], totalBeats: number, startBeat = 0) {
     this.stop()
-    this.bpm = bpm
     this.notes = notes
     this.totalBeats = totalBeats
     this.played.clear()
